@@ -1,9 +1,9 @@
 class SongsController < ApplicationController
   def index
     if params[:artist_id]
-      @songs = Artist.find(params[:artist_id]).posts
+      @artist = Artist.find(params[:artist_id]).posts
     else 
-      @songs = Artist.all
+      @artist = Artist.all
     end
   end
 
