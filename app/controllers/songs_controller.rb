@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
+    if params
   end
 
   def show
