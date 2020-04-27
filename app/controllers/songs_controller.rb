@@ -19,7 +19,8 @@ end
     @song = Song.find(params[:id])
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id])
-      @song = @artist.songs.find_by(id: params[:id])
+      if @artist.nil?
+        flash[:alert] = ""
   end
 
   def new
