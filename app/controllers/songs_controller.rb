@@ -22,7 +22,7 @@ end
       @artist = Artist.find_by(params[:artist_id])
       @song = @artist.songs.find_by(id: params[:id])
       
-      if @song.nil
+      if @song.nil?
         redirect_to artists_songs_path(@artist, alert: "Song not found.")
       end
     else
